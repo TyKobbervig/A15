@@ -1,11 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    background-color: #f4f4f4;
     text-align: center;
 }
 
-h1 {
-    color: darkred;
+/* Header */
+
+.site-header {
+    background-color: darkred;
+    color: white;
+    padding: 20px;
+}
+
+.main-header {
+    margin: 0;
 }
 
 /* Navigation */
@@ -13,75 +22,97 @@ h1 {
 .nav-menu {
     list-style: none;
     padding: 0;
+    margin-top: 15px;
 }
 
 .nav-menu li {
-    display: inline;
+    display: inline-block;
     margin: 0 10px;
 }
 
 .nav-menu a {
+    color: white;
     text-decoration: none;
-    color: darkred;
     font-weight: bold;
 }
 
-/* Content Sections */
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+
+.page {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+}
 
 .content-box {
-    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
     padding: 20px;
-    max-width: 600px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
 
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkred;
+    color: white;
     cursor: pointer;
+    font-size: 16px;
 }
 
-/* Cooking Tip Message */
+button:hover {
+    background-color: #990000;
+}
+
+/* Messages */
 
 #message {
     font-weight: bold;
     margin-top: 15px;
+    color: #006400;
 }
-
-/* Week 11 Counter */
 
 #counter {
     font-size: 24px;
     font-weight: bold;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 #counterMessage {
     margin-top: 10px;
     font-weight: bold;
-    color: darkgreen;
+    color: #003366;
 }
 
-#plusBtn,
-#minusBtn {
-    width: 50px;
-    margin: 5px;
-}
-
-/* API User Cards */
+/* API Cards */
 
 #user-container {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .user-card {
+    background-color: #fafafa;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-    background-color: #f9f9f9;
+}
+
+/* General Text */
+
+h2 {
+    color: darkred;
+}
+
+p {
+    line-height: 1.5;
 }
