@@ -1,43 +1,37 @@
-Week 12 - Performance Optimization
-Overview
+# Week 14 - Make It Better to Use
 
-This website demonstrates HTML, CSS, and JavaScript concepts through a peanut butter and jelly sandwich application. The project includes user interaction, state management, and external data loaded from an API. Performance improvements were added to reduce unnecessary work and make the application more efficient.
+## Overview
 
-Features
-Displays random cooking tips
-Loads external JSON data using the Fetch API
-Shows cooking community members from an API
-Uses state management to track the number of sandwiches
-Updates the page dynamically based on user interaction
-Limits displayed API users to improve readability
-Reduces unnecessary DOM updates for better performance
-Files Included
-index.html
-home.html
-about.html
-styles.css
-script.js
-Performance Note
+This week focused on improving the usability and overall user experience of the application. Rather than adding new features, the goal was to make existing features easier to understand, more visually consistent, and more user-friendly.
 
-One inefficient part of the application was repeatedly updating the page while displaying user data from the API. The code originally updated innerHTML during every loop iteration, causing multiple DOM updates. I improved this by building all of the HTML in a single variable and updating the page one time after the loop. The application also displays only the first five users instead of all available users, reducing unnecessary content and improving clarity.
+## UX Improvements
 
-Reflection
+### Issue 1: Limited User Guidance
 
-How did thinking about efficiency change the way you approach writing your code?
+The sandwich counter previously provided little instruction on how it should be used. Users may not have immediately understood the purpose of the controls.
 
-Thinking about efficiency helped me focus on reducing unnecessary work instead of only making the program function correctly. I learned that updating the page fewer times and displaying only the information users need can improve performance and make the application easier to maintain. Considering efficiency early in development helps create cleaner and more organized code.
+**Improvement:** Added clear instructions explaining how to use the counter and what the buttons do.
 
-Previous Week Features
-External Data
+### Issue 2: Limited User Feedback
 
-The application retrieves user information from an external API using the Fetch API and JSON data. The data is processed and displayed dynamically on the page.
+The cooking tip and sandwich counter features provided minimal feedback after user interactions.
 
-State Management
+**Improvement:** Added more descriptive status messages and feedback so users can immediately understand the results of their actions.
 
-The application uses JavaScript state management through a sandwich counter. Users can increase or decrease the number of sandwiches, and the displayed value updates immediately to reflect the current state.
+### Visual Improvements
 
-Reflection
+- Improved spacing and alignment throughout the website.
+- Used consistent colors and styling across all pages.
+- Enhanced button appearance and interaction feedback.
+- Improved visual hierarchy so important information stands out more clearly.
+- Created a more organized and professional layout.
 
-How did thinking about reliability change the way you approach writing your code?
+## User Experience Benefits
 
-Thinking about reliability changed the way I approach coding because I started considering what could go wrong instead of only focusing on making features work. I added checks for missing data, error handling for API requests, and validation to prevent invalid values from causing problems in the application. These improvements helped make the website more predictable, resilient, and able to continue functioning when unexpected situations occur.
+These improvements make the application easier to navigate and understand. Users receive clearer instructions, better feedback, and a more consistent visual experience across all pages.
+
+## Reflection
+
+**What changes did you make to improve usability, and how do those changes affect the user experience?**
+
+I improved usability by adding clearer instructions, improving visual consistency, and providing better feedback when users interact with the application. I also improved spacing, organization, and styling so important information is easier to find and understand. These changes make the website more intuitive, predictable, and enjoyable to use
