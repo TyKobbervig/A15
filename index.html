@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>First Web Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Home Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -21,8 +22,6 @@
         </nav>
     </header>
 
-    <p>Welcome to the world of Web Foundations.</p>
-
     <main class="page">
 
         <section class="content-box">
@@ -38,14 +37,18 @@
 
             <button id="recipeBtn">Show Cooking Tip</button>
 
-            <p id="message"></p>
+            <p id="message">
+                Click the button above to receive a cooking tip.
+            </p>
         </section>
 
-        <!-- Week 11 State Management Section -->
         <section class="content-box">
             <h2>Sandwich Counter</h2>
 
-            <p>Number of PB&amp;J sandwiches to make:</p>
+            <p>
+                Use the + and - buttons to choose how many PB&amp;J sandwiches
+                you would like to make.
+            </p>
 
             <button id="minusBtn">-</button>
 
@@ -54,11 +57,10 @@
             <button id="plusBtn">+</button>
 
             <p id="counterMessage">
-                You are making 0 sandwiches.
+                No sandwiches selected yet.
             </p>
         </section>
 
-        <!-- API Section -->
         <section class="content-box">
             <h2>Cooking Community Members</h2>
 
@@ -68,7 +70,7 @@
             </p>
 
             <div id="user-container">
-                Loading data...
+                Loading community members...
             </div>
         </section>
 
