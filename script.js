@@ -22,7 +22,8 @@ function displayTip(message) {
 
 function handleButtonClick() {
     const selectedTip = chooseRandomTip(cookingTips);
-    displayTip(selectedTip);
+
+    displayTip("Tip Loaded: " + selectedTip);
 }
 
 /* Week 11 State Management */
@@ -38,8 +39,16 @@ function updateDisplay() {
     }
 
     if (counterMessage) {
-        counterMessage.textContent =
-            "You are making " + sandwichCount + " sandwiches.";
+        if (sandwichCount === 0) {
+            counterMessage.textContent =
+                "No sandwiches selected yet.";
+        } else if (sandwichCount === 1) {
+            counterMessage.textContent =
+                "You are making 1 sandwich.";
+        } else {
+            counterMessage.textContent =
+                "You are making " + sandwichCount + " sandwiches.";
+        }
     }
 }
 
@@ -85,7 +94,8 @@ async function loadUsers() {
         const users = await response.json();
 
         /* Week 12 Performance Improvement:
-           Build HTML once and update the DOM once. */
+           Build HTML once and update the DOM once.
+           Only display the first 5 users. */
 
         let userHTML = "";
 
@@ -107,7 +117,7 @@ async function loadUsers() {
 
     } catch (error) {
         userContainer.textContent =
-            "Unable to load external data.";
+            "Unable to load external data. Please try again later.";
     }
 }
 
