@@ -61,12 +61,68 @@
             </p>
         </section>
 
+        <!-- Week 15 Form Section -->
+        <section class="content-box">
+            <h2>Build Your PB&amp;J Sandwich</h2>
+
+            <p>
+                Complete the form below and submit your sandwich order.
+            </p>
+
+            <form id="sandwichForm">
+
+                <label for="customerName">
+                    Your Name:
+                </label>
+                <br>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required>
+
+                <br><br>
+
+                <label for="jellyFlavor">
+                    Choose a Jelly Flavor:
+                </label>
+                <br>
+
+                <select id="jellyFlavor">
+                    <option value="Grape">Grape</option>
+                    <option value="Strawberry">Strawberry</option>
+                    <option value="Raspberry">Raspberry</option>
+                </select>
+
+                <br><br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="extraPeanutButter">
+                    Extra Peanut Butter
+                </label>
+
+                <br><br>
+
+                <button type="submit">
+                    Submit Order
+                </button>
+
+            </form>
+
+            <p id="formFeedback">
+                Complete the form and submit your order.
+            </p>
+        </section>
+
         <section class="content-box">
             <h2>Cooking Community Members</h2>
 
             <p>
-                The information below is loaded from an external API using
-                JavaScript and JSON data.
+                The information below is loaded from an external API
+                using JavaScript and JSON data.
             </p>
 
             <div id="user-container">
