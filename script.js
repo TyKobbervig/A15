@@ -58,6 +58,7 @@ function increaseCount() {
     }
 
     sandwichCount++;
+
     updateDisplay();
 }
 
@@ -73,10 +74,49 @@ function decreaseCount() {
     updateDisplay();
 }
 
+/* Week 15 Form Handling */
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const jelly =
+        document.getElementById("jellyFlavor").value;
+
+    const extraPB =
+        document.getElementById("extraPeanutButter").checked;
+
+    const feedback =
+        document.getElementById("formFeedback");
+
+    if (name === "") {
+        feedback.textContent =
+            "Please enter your name before submitting.";
+
+        return;
+    }
+
+    let orderMessage =
+        "Thank you, " +
+        name +
+        "! Your " +
+        jelly +
+        " PB&J sandwich order has been received.";
+
+    if (extraPB) {
+        orderMessage += " Extra peanut butter has been added.";
+    }
+
+    feedback.textContent = orderMessage;
+}
+
 /* API Functionality */
 
 async function loadUsers() {
-    const userContainer = document.getElementById("user-container");
+    const userContainer =
+        document.getElementById("user-container");
 
     if (!userContainer) {
         return;
@@ -93,16 +133,19 @@ async function loadUsers() {
 
         const users = await response.json();
 
-        /* Week 12 Performance Improvement:
-           Build HTML once and update the DOM once.
-           Only display the first 5 users. */
+        /* Week 12 Performance Improvement */
 
         let userHTML = "";
 
         users.slice(0, 5).forEach(user => {
-            const name = user.name || "Unknown User";
-            const email = user.email || "No Email Available";
-            const city = user.address?.city || "Unknown City";
+            const name =
+                user.name || "Unknown User";
+
+            const email =
+                user.email || "No Email Available";
+
+            const city =
+                user.address?.city || "Unknown City";
 
             userHTML += `
                 <div class="user-card">
@@ -116,6 +159,7 @@ async function loadUsers() {
         userContainer.innerHTML = userHTML;
 
     } catch (error) {
+
         userContainer.textContent =
             "Unable to load external data. Please try again later.";
     }
@@ -124,22 +168,44 @@ async function loadUsers() {
 /* Event Listeners */
 
 function setupEventListeners() {
-    const recipeBtn = document.getElementById("recipeBtn");
+    const recipeBtn =
+        document.getElementById("recipeBtn");
 
     if (recipeBtn) {
-        recipeBtn.addEventListener("click", handleButtonClick);
+        recipeBtn.addEventListener(
+            "click",
+            handleButtonClick
+        );
     }
 
-    const plusBtn = document.getElementById("plusBtn");
+    const plusBtn =
+        document.getElementById("plusBtn");
 
     if (plusBtn) {
-        plusBtn.addEventListener("click", increaseCount);
+        plusBtn.addEventListener(
+            "click",
+            increaseCount
+        );
     }
 
-    const minusBtn = document.getElementById("minusBtn");
+    const minusBtn =
+        document.getElementById("minusBtn");
 
     if (minusBtn) {
-        minusBtn.addEventListener("click", decreaseCount);
+        minusBtn.addEventListener(
+            "click",
+            decreaseCount
+        );
+    }
+
+    const sandwichForm =
+        document.getElementById("sandwichForm");
+
+    if (sandwichForm) {
+        sandwichForm.addEventListener(
+            "submit",
+            handleFormSubmit
+        );
     }
 }
 
